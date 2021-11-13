@@ -1,0 +1,24 @@
+// font-stack
+@use "./variables" as *;
+
+@mixin flex($justify-content: flex-start, $align-items: stretch, $flex-direction: row, $flex-wrap: nowrap){
+display:flex;
+justify-content: $justify-content;
+align-items: $align-items;
+flex-direction: $flex-direction;
+flex-wrap: $flex-wrap;
+}
+
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;        
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;        
+    }
+}
+

@@ -1,0 +1,99 @@
+@use "./typography" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+
+
+* {
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'AvenirNextLTPro';
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+// Header styling
+.header {
+    background-color: $bandsite-black;
+    width: 100%;
+    padding: 1rem 0 0;
+    @include flex(center, center, column);
+     @include tablet {
+        @include flex(flex-start, center, row); 
+        padding: 1.25rem 2.25rem;
+    }
+    @include desktop {
+        padding: 1.25rem 6rem;
+    }
+
+    &__image-logo { 
+    max-width: 7.5rem;
+    max-height: 1.25rem;
+}
+
+    &__nav{
+        width: 100%;
+        @include tablet {
+            width: 30%;
+        }
+        @include desktop {
+            width: 20%;
+        }
+    }
+
+    &__list{
+        @include flex(space-around, center);  
+        width:100%;
+        padding: 1rem 0rem;
+        position:relative;
+        @include tablet {
+            padding: 0;
+            @include flex(space-around, center);  
+            margin-left: 2rem; 
+        }
+        @include desktop {
+            @include flex(space-evenly, center);  
+            margin-left: 2rem; 
+        }
+    }
+    &__link-nav{
+    @include font-stack (0.8125rem, 400, 1.125rem, $mercury);
+    @include tablet {
+        @include font-stack (0.875rem, 400, 2rem, $mercury);
+    }
+    }
+
+    &__link-nav--active {
+    @include font-stack (0.8125rem, 600, 1.125rem, $white);
+      @include tablet {
+        @include font-stack (0.875rem, 600, 1.375rem, $white);
+        padding-bottom: 1.5rem;
+        border-bottom: 3px solid $white;
+    }
+    &:after{
+        display:block;
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: $white;
+        width: 50%;
+        bottom: 0;
+        left: 0%;
+        @include tablet {
+            display:none;
+        }
+    }
+    }
+}
+
+
+

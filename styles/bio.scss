@@ -1,1 +1,33 @@
-/* Comments */
+@use "./partials/global" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+
+// Hero section
+.hero {
+    height: 50vh;
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-blend-mode: darken;
+    background-color: rgba(50, 50, 50, 0.5);
+    @include flex(flex-start, center);
+        @include tablet {
+        height: 70vh;
+        }
+         @include desktop {
+        height: 80vh;
+        }
+
+    &__title {
+        @include font-stack(1.5rem, 700, 2rem, $white);
+        @include tablet {
+            @include font-stack (3.75rem, 700, 4.25rem, $white);
+            margin-left:1.25rem;
+            }
+            @include desktop {
+            margin-left:5rem;
+            }
+    }
+}

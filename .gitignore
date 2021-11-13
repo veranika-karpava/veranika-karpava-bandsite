@@ -1,14 +1,8 @@
+# Ignore scss map files
 *.css.map
 
 # Ignore system files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-*[Tt]humbs.db
-*.Trashes
+**.DS_Store
 
 # Editor files
 .vscode/*
