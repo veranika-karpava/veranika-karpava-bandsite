@@ -17,7 +17,7 @@
         height: 70vh;
         }
          @include desktop {
-        height: 80vh;
+        height: 60vh;
         }
 
     &__title {
@@ -31,7 +31,6 @@
             }
     }
 }
-
 // About-band section
 .about-band {
     padding: 1.5rem 1rem;
@@ -40,6 +39,9 @@
     @include tablet {
         padding: 3rem 2.25rem 2.25rem;
     }
+    @include desktop {
+        padding: 3rem 6rem 2.25rem;
+        }
 
     &__title {
     @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
@@ -116,16 +118,49 @@
             width: 48%;
         }
     }
+}
 
     // Gallery section
-    // .gallery {
+.gallery {
+    padding: 1.5rem 1rem;
+    background-color: $alabaster;
+    @include tablet {
+        padding: 3rem 0.75rem 0.75rem 2.25rem;
+    }
+    @include desktop {
+        padding: 3rem 4.5rem 0.75rem 6rem;
+    }
 
-    // }
+    &__title {
+        @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
+        @include tablet {
+            @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
+            padding-bottom: 2.25rem;
+        }
+    }
+    &__album {
+        @include flex(space-between, center, column, nowrap); 
+        @include tablet {
+            @include flex(space-between, center, row, wrap); 
+    }
+    }
+    &__image {
+        width: 100%;
+        margin-top: 1rem;
+        @include tablet {
+            width: 31%; 
+            margin-top: 0rem;
+            margin-bottom: 1.5rem;
+            margin-right: 1.5rem;
+
+    }
+    }
+    }
 
 
 
 
 
-}
+
 
 

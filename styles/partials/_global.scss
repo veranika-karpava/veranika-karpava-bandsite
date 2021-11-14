@@ -32,7 +32,7 @@ ul {
         padding: 1.25rem 2.25rem;
     }
     @include desktop {
-        padding: 1.25rem 6rem;
+        padding: 1.5rem 6rem;
     }
 
     &__image-logo { 
@@ -76,8 +76,11 @@ ul {
     @include font-stack (0.8125rem, 600, 1.125rem, $white);
       @include tablet {
         @include font-stack (0.875rem, 600, 1.375rem, $white);
-        padding-bottom: 1.5rem;
+        padding-bottom: 36%;
         border-bottom: 3px solid $white;
+        @include desktop {
+            padding-bottom: 40%;
+        }
     }
     &:after{
         display:block;
