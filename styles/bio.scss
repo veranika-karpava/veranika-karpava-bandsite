@@ -3,21 +3,21 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
-// Hero section
+// hero section
 .hero {
     height: 50vh;
     background-image: url(../assets/images/hero-bio.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50%;
+    background-position: 80%;
     background-blend-mode: darken;
     background-color: rgba(50, 50, 50, 0.5);
     @include flex(flex-start, center);
         @include tablet {
-        height: 70vh;
+            height: 70vh;
         }
          @include desktop {
-        height: 60vh;
+            height: 60vh;
         }
 
     &__title {
@@ -26,12 +26,13 @@
             @include font-stack (3.75rem, 600, 4.25rem, $white);
             margin-left:1.25rem;
             }
-            @include desktop {
+        @include desktop {
             margin-left:5rem;
             }
     }
 }
-// About-band section
+
+// about-band section
 .about-band {
     padding: 1.5rem 1rem;
     background-color: $white;
@@ -44,9 +45,9 @@
         }
 
     &__title {
-    @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
-    @include tablet {
-        @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
+        @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
+        @include tablet {
+            @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
     }
     }
 
@@ -70,9 +71,7 @@
     }
 
     &__quote {
-        @include tablet {
-        padding-bottom: 0.2rem;
-        }
+        padding-bottom: 0.5rem;
     }
 
     &__author-quote {
@@ -95,7 +94,7 @@
         }
 
     }
-    &__container {
+    &__container-detail {
         @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
         @include flex(space-between, flex-start, column, nowrap); 
         @include tablet {
@@ -120,7 +119,7 @@
     }
 }
 
-    // Gallery section
+    // gallery section
 .gallery {
     padding: 1.5rem 1rem;
     background-color: $alabaster;
@@ -138,24 +137,26 @@
             padding-bottom: 2.25rem;
         }
     }
+
     &__album {
         @include flex(space-between, center, column, nowrap); 
         @include tablet {
             @include flex(space-between, center, row, wrap); 
+        }
     }
-    }
-    &__image {
+
+    &__image-item {
         width: 100%;
         margin-top: 1rem;
         @include tablet {
+            width: 30%; 
+            margin: 0rem 1.5rem 1.5rem 0;
+        }
+        @include desktop {
             width: 31%; 
-            margin-top: 0rem;
-            margin-bottom: 1.5rem;
-            margin-right: 1.5rem;
-
+        }
     }
-    }
-    }
+}
 
 
 
