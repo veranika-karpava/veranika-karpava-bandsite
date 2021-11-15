@@ -25,7 +25,7 @@ ul {
 .header {
     background-color: $bandsite-black;
     width: 100%;
-    padding: 1rem 0 0;
+    padding-top: 1rem;
     @include flex(center, center, column);
      @include tablet {
         @include flex(flex-start, center, row); 
@@ -72,6 +72,12 @@ ul {
             @include font-stack (0.875rem, 400, 2rem, $mercury);
         }
     }
+        &__link-nav--hover:hover {
+            @include desktop {
+                border-bottom: 3px solid $white;
+                padding-bottom: 65%;
+            }
+        }
 
     &__link-nav--active {
         @include font-stack (0.8125rem, 600, 1.125rem, $white);
@@ -99,6 +105,7 @@ ul {
     }
     }
 }
+
 
 // footer section
 .footer {

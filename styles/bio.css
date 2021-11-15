@@ -37,7 +37,7 @@ ul {
 .header {
   background-color: #323232;
   width: 100%;
-  padding: 1rem 0 0;
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,6 +121,12 @@ ul {
     font-weight: 400;
     line-height: 2rem;
     color: #E1E1E1;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .header__link-nav--hover:hover {
+    border-bottom: 3px solid #FFFFFF;
+    padding-bottom: 65%;
   }
 }
 .header__link-nav--active {
@@ -349,10 +355,8 @@ ul {
 
 .hero {
   height: 50vh;
-  background-image: url(../assets/images/hero-bio.jpg);
-  background-repeat: no-repeat;
+  background: url(../assets/images/hero-bio.jpg) no-repeat 50%;
   background-size: cover;
-  background-position: 80%;
   background-blend-mode: darken;
   background-color: rgba(50, 50, 50, 0.5);
   display: flex;
@@ -368,7 +372,7 @@ ul {
 }
 @media screen and (min-width: 80rem) {
   .hero {
-    height: 60vh;
+    height: 80vh;
   }
 }
 .hero__title {
@@ -454,16 +458,36 @@ ul {
 }
 .about-band__image {
   width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0px -40px;
+     object-position: 0px -40px;
+  margin-bottom: -1.5rem;
 }
 @media screen and (min-width: 48rem) {
   .about-band__image {
-    margin-bottom: 2.25rem;
+    margin-bottom: -0.5rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .about-band__image {
+    margin-bottom: -0.2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .about-band__blockquote {
+    width: 71%;
+    align-self: flex-start;
   }
 }
 .about-band__quote {
   padding-bottom: 0.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .about-band__quote {
+    padding-bottom: 1rem;
+  }
 }
 @media screen and (min-width: 48rem) {
   .about-band__author-quote {
@@ -605,5 +629,12 @@ ul {
 @media screen and (min-width: 80rem) {
   .gallery__image-item {
     width: 31%;
+    filter: grayscale(1);
+  }
+}
+@media screen and (min-width: 80rem) {
+  .gallery__image-item:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
   }
 }/*# sourceMappingURL=bio.css.map */

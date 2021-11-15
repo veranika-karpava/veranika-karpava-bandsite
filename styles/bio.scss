@@ -6,18 +6,16 @@
 // hero section
 .hero {
     height: 50vh;
-    background-image: url(../assets/images/hero-bio.jpg);
-    background-repeat: no-repeat;
+    background: url(../assets/images/hero-bio.jpg) no-repeat 50%;
     background-size: cover;
-    background-position: 80%;
     background-blend-mode: darken;
     background-color: rgba(50, 50, 50, 0.5);
-    @include flex(flex-start, center);
+    @include flex(flex-start, center); 
         @include tablet {
             height: 70vh;
         }
          @include desktop {
-            height: 60vh;
+            height: 80vh;
         }
 
     &__title {
@@ -55,6 +53,7 @@
         @include flex(flex-start, center, column, wrap); 
         margin: 1rem 0 1.5rem;
         @include font-stack (0.875rem, 600, 1.375rem, $bandsite-black);
+        // position: relative;
         @include tablet {
             margin: 2.25rem 3rem;
             @include font-stack (1.47rem, 600, 2rem, $bandsite-black);
@@ -63,15 +62,30 @@
 
     &__image {
         width: 100%;
-        height: auto;
-        margin-bottom: 1rem;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0px -40px;
+        margin-bottom: -1.5rem;
         @include tablet {
-            margin-bottom: 2.25rem;
+            margin-bottom: -0.5rem;
+        }
+        @include tablet {
+            margin-bottom: -0.2rem;
+        }
+    }
+
+    &__blockquote {
+        @include desktop {
+            width: 71%;
+            align-self: flex-start;
         }
     }
 
     &__quote {
         padding-bottom: 0.5rem;
+        @include tablet {
+            padding-bottom: 1rem;
+        }
     }
 
     &__author-quote {
@@ -154,6 +168,13 @@
         }
         @include desktop {
             width: 31%; 
+            filter: grayscale(1);
+        }
+        &:hover {
+            @include desktop {
+            filter: grayscale(0);  
+            transform: scale(1.1); 
+            }
         }
     }
 }
