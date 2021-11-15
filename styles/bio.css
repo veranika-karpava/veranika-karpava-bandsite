@@ -354,7 +354,7 @@ ul {
 }
 
 .hero {
-  height: 50vh;
+  height: 35vh;
   background: url(../assets/images/hero-bio.jpg) no-repeat 50%;
   background-size: cover;
   background-blend-mode: darken;
@@ -367,12 +367,12 @@ ul {
 }
 @media screen and (min-width: 48rem) {
   .hero {
-    height: 70vh;
+    height: 50vh;
   }
 }
 @media screen and (min-width: 80rem) {
   .hero {
-    height: 80vh;
+    height: 60vh;
   }
 }
 .hero__title {

@@ -5,17 +5,17 @@
 
 // hero section
 .hero {
-    height: 50vh;
+    height: 35vh;
     background: url(../assets/images/hero-bio.jpg) no-repeat 50%;
     background-size: cover;
     background-blend-mode: darken;
     background-color: rgba(50, 50, 50, 0.5);
     @include flex(flex-start, center); 
         @include tablet {
-            height: 70vh;
+            height: 50vh;
         }
          @include desktop {
-            height: 80vh;
+            height: 60vh;
         }
 
     &__title {
