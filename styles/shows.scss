@@ -1,0 +1,77 @@
+@use "./partials/global" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+
+// header section
+.header__link-nav--active:after {
+    bottom: 0%;
+    right: 0%;
+    left: auto;
+}
+
+
+
+
+// hero section 
+.hero {
+    height: 35vh;
+    background: url(../assets/images/hero-shows.jpg) no-repeat 50%;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(50, 50, 50, 0.5);
+    @include flex(space-between, flex-start, column, nowrap); 
+        @include tablet {
+            height: 50vh;
+        }
+         @include desktop {
+            height: 60vh;
+            @include flex(space-between, flex-start, row, nowrap); 
+        }
+
+    &__content {
+        margin:2.25rem 1rem 0rem;
+        @include tablet {
+            margin:3rem 2.25rem 0rem;
+            width:70%;
+        }
+        @include desktop {
+            margin: 10rem 0rem 0 6rem;
+            width:100%;
+        }
+
+    }
+
+    &__tagline {
+        @include font-stack (0.8125rem, 400, 1.125rem, $mercury);
+        margin-bottom: 1rem;
+        @include tablet {
+            @include font-stack (1.5rem, 600, 2rem, $mercury);
+            }
+    }
+
+    &__title {
+        @include font-stack(1.5rem, 600, 2rem, $white);
+        @include tablet {
+            @include font-stack (3.75rem, 600, 4.25rem, $white);
+            width:70%
+            }
+            @include desktop {
+                width:70%;
+            }
+    }
+
+    &__track {
+        width: 100%;
+        height: 9rem;
+        padding:0 1rem 1.5rem;
+        margin-bottom: 0.75rem;
+        @include tablet {
+            margin:0rem 2.25rem 1.5rem 1.25rem;
+            width:60%;
+            }
+            @include desktop {
+                margin:13.5rem 5rem 0 0;
+            }
+    }
+}

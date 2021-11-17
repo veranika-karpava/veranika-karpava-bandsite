@@ -20,6 +20,7 @@
 
     &__title {
         @include font-stack(1.5rem, 600, 2rem, $white);
+        margin-left:1rem;
         @include tablet {
             @include font-stack (3.75rem, 600, 4.25rem, $white);
             margin-left:1.25rem;
