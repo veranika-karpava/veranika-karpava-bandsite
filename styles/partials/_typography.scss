@@ -38,6 +38,11 @@
     color: $color;
 }
 
+@mixin font-placeholder-text {
+    @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
+            font-family: 'AvenirNextLTPro', 'Calibri', sans-serif; 
+}
+
 
 
 

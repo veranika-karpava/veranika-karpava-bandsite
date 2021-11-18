@@ -22,3 +22,15 @@ flex-wrap: $flex-wrap;
     }
 }
 
+@mixin styleInputMobile{
+    border-radius: 4px;
+    border: 1px solid $mercury;
+    padding: 0.75rem;
+}
+
+@mixin styleInputTabletDesktop{
+    border-radius: 4px;
+    border: 1px solid $mercury;
+    padding: 1rem;
+}
+

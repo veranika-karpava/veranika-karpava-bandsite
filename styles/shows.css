@@ -22,7 +22,7 @@
 }
 
 body {
-  font-family: "AvenirNextLTPro";
+  font-family: "AvenirNextLTPro", "Calibri", sans-serif;
 }
 
 a {
@@ -361,6 +361,7 @@ ul {
 
 .hero {
   height: 35vh;
+  min-height: 20rem;
   background: url(../assets/images/hero-shows.jpg) no-repeat 50%;
   background-size: cover;
   background-blend-mode: darken;
@@ -388,6 +389,7 @@ ul {
 }
 .hero__content {
   margin: 2.25rem 1rem 0rem;
+  width: 70%;
 }
 @media screen and (min-width: 48rem) {
   .hero__content {
@@ -432,12 +434,6 @@ ul {
     font-weight: 600;
     line-height: 4.25rem;
     color: #FFFFFF;
-    width: 70%;
-  }
-}
-@media screen and (min-width: 80rem) {
-  .hero__title {
-    width: 70%;
   }
 }
 .hero__track {

@@ -11,8 +11,8 @@
 
 <body>
     <header class="header">
-        <a href="./index.html" class="header__link-logo"><img src="./assets/logos/Logo-bandsite.svg" alt="BandSite"
-                class="header__image-logo"></a>
+        <a href="./index.html" class="header__link-logo"><img src="./assets/logos/Logo-bandsite.svg"
+                alt="Band Site Logo" class="header__image-logo"></a>
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__item-nav"><a href="./index.html"
@@ -29,7 +29,7 @@
         <section class="about-band">
             <h2 class="about-band__title">About the Musicians</h2>
             <div class="about-band__quotation">
-                <img src="./assets/images/band.jpg" alt="BandSite" class="about-band__image">
+                <img src="./assets/images/band.jpg" alt="Band Site image" class="about-band__image">
                 <blockquote class="about-band__blockquote">
                     <p class="about-band__quote">"We push each other to be the best. It’s not uncommon for one of us
                         to say 'this needs to be
@@ -69,15 +69,44 @@
         <section class="gallery">
             <h2 class="gallery__title">Photo Gallery</h2>
             <div class="gallery__album">
-                <img src="./assets/images/Photo-gallery-1.jpg" alt="СoncertPhoto1" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-2.jpg" alt="СoncertPhoto2" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-3.jpg" alt="СoncertPhoto3" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-4.jpg" alt="СoncertPhoto4" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-5.jpg" alt="СoncertPhoto5" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-6.jpg" alt="СoncertPhoto6" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-7.jpg" alt="СoncertPhoto7" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-8.jpg" alt="СoncertPhoto8" class="gallery__image-item">
-                <img src="./assets/images/Photo-gallery-9.jpg" alt="СoncertPhoto9" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-1.jpg" alt="Сoncert Photo1" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-2.jpg" alt="Сoncert Photo2" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-3.jpg" alt="Сoncert Photo3" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-4.jpg" alt="Сoncert Photo4" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-5.jpg" alt="Сoncert Photo5" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-6.jpg" alt="Сoncert Photo6" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-7.jpg" alt="Сoncert Photo7" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-8.jpg" alt="Сoncert Photo8" class="gallery__image-item">
+                <img src="./assets/images/Photo-gallery-9.jpg" alt="Сoncert Photo9" class="gallery__image-item">
+            </div>
+        </section>
+        <section class="comments">
+            <h2 class="comments__title">Join the Conversation</h2>
+            <div class="comments__form-container">
+                <div class="comments__avatar-box">
+                    <img src="./assets/images/Mohan-muruge.jpg" alt="Mohan-muruge Avatar" class="comments__image">
+                </div>
+                <form class="comments__form">
+                    <h4 class="comments__title-input">NAME</h4>
+                    <input class="comments__name-form" type="text" name="name-commenter" placeholder="Enter your name"
+                        min=1>
+                    <h4 class="comments__title-input">COMMENT</h4>
+                    <textarea class="comments__comment-box" type="text" name="comment"
+                        placeholder="Add a new comment"></textarea>
+                    <button class="comments__button-submit" type="submit">COMMENT</button>
+                </form>
+            </div>
+            <div class="comments__exist-comments-container">
+                <article>
+                    <div class="comments__avatar-grey"></div>
+                    <div class="comments__content">
+                        <h5 class="comments__name-commenter"></h5>
+                        <p class="comments__timestamp"></p>
+                        <p class="comments__text"></p>
+                    </div>
+                </article>
+                <article></article>
+                <article></article>
             </div>
         </section>
     </main>
