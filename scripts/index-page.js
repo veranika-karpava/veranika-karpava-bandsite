@@ -1,5 +1,14 @@
 // CommentList 
 
+{/* <div class="comments__exist-comments-container">
+<article>
+    <div class="comments__avatar-grey"></div>
+    <div class="comments__content">
+        <h5 class="comments__name-commenter"></h5>
+        <p class="comments__timestamp"></p>
+        <p class="comments__text"></p>
+    </div> */}
+
 let existComments = [
     {
         name: 'Connor Walton',

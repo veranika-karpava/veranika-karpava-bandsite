@@ -203,8 +203,15 @@
 
     &__form-container {
         @include flex(flex-start, flex-start, row, nowrap); 
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $mercury;
+        @include tablet {
+            padding-bottom: 1.5rem;  
+            margin-left: 3.75rem;
+            width: 90%;
+        }
         @include desktop {
-            width: 60%;
+            width: 50%;
             margin: 0 auto;
         }
     }
@@ -214,6 +221,9 @@
         margin-top: 1.5rem;
         text-align: right;
         margin-right: 1rem;
+        @include tablet {
+            width: 10%; 
+        }
     }
 
     &__image {
@@ -230,6 +240,9 @@
 
     &__form {
         width:80%;
+        @include tablet {
+            width: 90%;  
+        }
     }
 
     &__title-input {
@@ -290,7 +303,7 @@
         background-color: $bandsite-black;
         border: none;
         border-radius: 4px;
-        @include font-stack(0.625rem, 700, 1.25rem, $white);margin-bottom: 0.5rem;
+        @include font-stack(0.625rem, 700, 1.25rem, $white);
 
         &:hover {
         background-color: $band-site-darkblack;
@@ -301,10 +314,78 @@
             width: 30%;
             min-width: 9.375rem;
             float: right;
-            margin-bottom: 1rem;
         }   
     }
-}
+    
+    &__exist-comments-container{
+        @include flex(flex-start, flex-start, column, nowrap); 
+        @include tablet {
+            margin-left: 3.75rem;
+            width: 90%;
+        }
+        @include desktop {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+    &__list {
+        width:100%;
+        padding: 1rem 0rem;
+        @include flex(flex-end, flex-start, row, nowrap); 
+        border-bottom: 1px solid $mercury;
+        @include desktop {
+            padding: 1.5rem 0rem;  
+        }
+    }
+
+    &__avatar-grey {
+        background-color: $mercury;
+        border-radius: 50% 50%;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: 1.5rem;
+        text-align: right;
+        @include tablet {
+            width: 3.25rem;
+            height: 3.25rem;
+        }
+    }
+
+    &__content {
+        width: 80%;
+        @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
+        position: relative;
+        @include tablet {
+            width: 90%;  
+            @include font-stack (0.875rem, 400, 1.375rem, $bandsite-black);
+        }
+    }
+
+    &__name-commenter {
+        @include font-stack (0.8125rem, 600, 1.125rem, $bandsite-black);
+        margin-bottom: 0.5rem;
+        @include tablet {
+            @include font-stack (0.875rem, 600, 1.375rem, $bandsite-black);
+        }
+    }
+
+    &__timestamp {
+        color: $silver;
+        position: absolute;
+        right:0%;
+        top: 0%
+    }
+
+    &__text {
+        @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
+        @include tablet {
+            @include font-stack (0.875rem, 400, 1.375rem, $bandsite-black);
+        }
+    }
+    }
+
+
 
 
 
