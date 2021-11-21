@@ -55,7 +55,6 @@ let listConcerts = [
     }
 ]
 
-
 let mainSection = document.querySelector('.main');
 let showsSection = createSectionElement();
 mainSection.appendChild(showsSection);
@@ -70,11 +69,50 @@ function createSectionElement() {
     showsTitle.innerText = 'Shows';
     showsSection.appendChild(showsTitle);
 
+    let showsContainerCards = createSectionShowsCards();
+    showsSection.appendChild(showsContainerCards);
+
+    return showsSection;
+}
+
+function createSectionShowsCards() {
+
+    let showsContainerCards = document.createElement('div');
+    showsContainerCards.classList.add('shows__cards');
+
+    let containerTitle = createContainerTitle();
+    showsContainerCards.appendChild(containerTitle);
+
     listConcerts.forEach((item) => {
         let showsCard = createCardElement(item);
-        showsSection.appendChild(showsCard);
+        showsContainerCards.appendChild(showsCard);
     })
-    return showsSection;
+
+    return showsContainerCards;
+}
+
+
+function createContainerTitle() {
+
+    let containerTitle = document.createElement('div');
+    containerTitle.classList.add('shows__containerTitle');
+
+    let titleCardDate = document.createElement('h4');
+    titleCardDate.classList.add('shows__title-card-container');
+    titleCardDate.innerText = 'DATE';
+    containerTitle.appendChild(titleCardDate);
+
+    let titleCardVenue = document.createElement('h4');
+    titleCardVenue.classList.add('shows__title-card-container');
+    titleCardVenue.innerText = 'VENUE';
+    containerTitle.appendChild(titleCardVenue);
+
+    let titleCardLocation = document.createElement('h4');
+    titleCardLocation.classList.add('shows__title-card-container');
+    titleCardLocation.innerText = 'LOCATION';
+    containerTitle.appendChild(titleCardLocation);
+
+    return containerTitle;
 }
 
 function createCardElement(item) {

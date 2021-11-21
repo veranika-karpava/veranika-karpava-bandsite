@@ -737,6 +737,15 @@ ul {
   color: #AFAFAF;
   margin-bottom: 4px;
 }
+@media screen and (min-width: 48rem) {
+  .comments__title-input {
+    font-style: normal;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    color: #AFAFAF;
+  }
+}
 .comments__name-form {
   height: 2.25rem;
   width: 100%;
@@ -849,9 +858,6 @@ ul {
   line-height: 1.25rem;
   color: #FFFFFF;
 }
-.comments__button-submit:hover {
-  background-color: #000000;
-}
 @media screen and (min-width: 48rem) {
   .comments__button-submit {
     font-style: normal;
@@ -859,12 +865,17 @@ ul {
     font-weight: 400;
     line-height: 1.25rem;
     color: #FFFFFF;
+    padding: 0 2rem;
     width: 30%;
-    min-width: 9.375rem;
     float: right;
   }
 }
-.comments__exist-comments-container {
+@media screen and (min-width: 80rem) {
+  .comments__button-submit:hover {
+    background-color: #000000;
+  }
+}
+.comments__button-submit__exist-comments-container {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -872,18 +883,18 @@ ul {
   flex-wrap: nowrap;
 }
 @media screen and (min-width: 48rem) {
-  .comments__exist-comments-container {
+  .comments__button-submit__exist-comments-container {
     margin-left: 3.75rem;
     width: 90%;
   }
 }
 @media screen and (min-width: 80rem) {
-  .comments__exist-comments-container {
+  .comments__button-submit__exist-comments-container {
     width: 50%;
     margin: 0 auto;
   }
 }
-.comments__list {
+.comments__button-submit__list {
   width: 100%;
   padding: 1rem 0rem;
   display: flex;
@@ -894,11 +905,11 @@ ul {
   border-bottom: 1px solid #E1E1E1;
 }
 @media screen and (min-width: 80rem) {
-  .comments__list {
+  .comments__button-submit__list {
     padding: 1.5rem 0rem;
   }
 }
-.comments__avatar-grey {
+.comments__button-submit__avatar-grey {
   background-color: #E1E1E1;
   border-radius: 50% 50%;
   width: 2.25rem;
@@ -907,12 +918,12 @@ ul {
   text-align: right;
 }
 @media screen and (min-width: 48rem) {
-  .comments__avatar-grey {
+  .comments__button-submit__avatar-grey {
     width: 3.25rem;
     height: 3.25rem;
   }
 }
-.comments__content {
+.comments__button-submit__content {
   width: 80%;
   font-style: normal;
   font-size: 0.8125rem;
@@ -922,7 +933,7 @@ ul {
   position: relative;
 }
 @media screen and (min-width: 48rem) {
-  .comments__content {
+  .comments__button-submit__content {
     width: 90%;
     font-style: normal;
     font-size: 0.875rem;
@@ -931,7 +942,7 @@ ul {
     color: #323232;
   }
 }
-.comments__name-commenter {
+.comments__button-submit__name-commenter {
   font-style: normal;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -940,7 +951,7 @@ ul {
   margin-bottom: 0.5rem;
 }
 @media screen and (min-width: 48rem) {
-  .comments__name-commenter {
+  .comments__button-submit__name-commenter {
     font-style: normal;
     font-size: 0.875rem;
     font-weight: 600;
@@ -948,13 +959,13 @@ ul {
     color: #323232;
   }
 }
-.comments__timestamp {
+.comments__button-submit__timestamp {
   color: #AFAFAF;
   position: absolute;
   right: 0%;
   top: 0%;
 }
-.comments__text {
+.comments__button-submit__text {
   font-style: normal;
   font-size: 0.8125rem;
   font-weight: 400;
@@ -962,7 +973,7 @@ ul {
   color: #323232;
 }
 @media screen and (min-width: 48rem) {
-  .comments__text {
+  .comments__button-submit__text {
     font-style: normal;
     font-size: 0.875rem;
     font-weight: 400;
