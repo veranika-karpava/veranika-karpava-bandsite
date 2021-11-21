@@ -259,6 +259,7 @@
         // &:focus {
         //     border: 1px solid $bandsite-black;   
         // }
+        
         &::placeholder {
             @include font-placeholder-text;
         }

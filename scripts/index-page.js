@@ -29,13 +29,17 @@ let existComments = [
 
 let commentContainer = document.querySelector('.comments__exist-comments-container');
 
-for (let i = 0; i < existComments.length; i++) {
-    let comment = existComments[i];
-    let commentList = displayComment(comment);
-    commentContainer.appendChild(commentList);
+displayComment(existComments);
+
+function displayComment(comments) {
+    for (let i = 0; i < comments.length; i++) {
+        comments[i];
+        let commentList = createCommentList(comments[i]);
+        commentContainer.appendChild(commentList);
+    }
 }
 
-function displayComment(comment) {
+function createCommentList(comment) {
 
     let commentList = document.createElement('article');
     commentList.classList.add('comments__list');
@@ -86,29 +90,42 @@ let form = document.querySelector('.comments__form');
 form.addEventListener('submit', handleCommentForm);
 
 function handleCommentForm(event) {
+
     event.preventDefault();
 
-    let timestamp = getCommentDate();
+    let nameCommenter = document.querySelector('.comments__name-form').value;
+    let dateStamp = getCommentDate();
+    let commentText = document.querySelector('.comments__comment-box').value;
 
     function getCommentDate() {
         let date = new Date();
         let dateComment = ((date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear());
         return dateComment;
-    }
-
-    let comment = {};
-    let name = document.querySelector('.comments__name-form').value;
-    let commentText = document.querySelector('.comments__comment-box').value;
-
-    comment['name'] = name;
-    comment['timestamp'] = timestamp;
-    comment['commentText'] = commentText;
-    existComments.unshift(comment);
+    };
 
     event.target.reset();
 
-    commentContainer.prepend(displayComment(comment));
+    removeComment();
 
+    addNewComment(nameCommenter, dateStamp, commentText);
+
+    displayComment(existComments);
+
+}
+
+function addNewComment(nameCommenter, dateStamp, commentText) {
+    existComments.unshift({
+        name: nameCommenter,
+        timestamp: dateStamp,
+        commentText: commentText
+    });
+}
+
+let container = document.querySelector('.comments__exist-comments-container')
+function removeComment() {
+    while (container.firstElementChild) {
+        container.removeChild(container.firstElementChild)
+    }
 }
 
 
