@@ -198,5 +198,19 @@ function createButtonElement() {
 }
 
 
+// Click Event
+let articleList = document.querySelectorAll('.shows__card');
+
+articleList.forEach((article) => {
+    article.addEventListener('click', () => {
+
+        if (article.classList.contains('selected')) {
+            article.classList.remove('selected');
+        } else {
+            article.classList.add('selected');
+        }
+    })
+})
+
 
 

@@ -369,11 +369,13 @@ ul {
 @media screen and (min-width: 48rem) {
   .hero {
     height: 50vh;
+    min-height: 30rem;
   }
 }
 @media screen and (min-width: 80rem) {
   .hero {
     height: 60vh;
+    min-height: 35rem;
   }
 }
 .hero__title {
@@ -747,6 +749,7 @@ ul {
   }
 }
 .comments__name-form {
+  outline: none;
   height: 2.25rem;
   width: 100%;
   margin-bottom: 1rem;
@@ -787,6 +790,9 @@ ul {
   color: #323232;
   font-family: "AvenirNextLTPro", "Calibri", sans-serif;
 }
+.comments__name-form:focus {
+  border-color: #323232;
+}
 @media screen and (min-width: 48rem) {
   .comments__name-form {
     height: 3rem;
@@ -797,6 +803,7 @@ ul {
   }
 }
 .comments__comment-box {
+  outline: none;
   height: 6rem;
   width: 100%;
   margin-bottom: 0.5rem;
@@ -838,6 +845,9 @@ ul {
   color: #323232;
   font-family: "AvenirNextLTPro", "Calibri", sans-serif;
 }
+.comments__comment-box:focus {
+  border-color: #323232;
+}
 @media screen and (min-width: 48rem) {
   .comments__comment-box {
     margin-bottom: 1rem;
@@ -845,6 +855,9 @@ ul {
     border: 1px solid #E1E1E1;
     padding: 1rem;
   }
+}
+.comments .active {
+  border-color: #323232;
 }
 .comments__button-submit {
   width: 100%;
@@ -875,7 +888,7 @@ ul {
     background-color: #000000;
   }
 }
-.comments__button-submit__exist-comments-container {
+.comments__exist-comments-container {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -883,18 +896,18 @@ ul {
   flex-wrap: nowrap;
 }
 @media screen and (min-width: 48rem) {
-  .comments__button-submit__exist-comments-container {
+  .comments__exist-comments-container {
     margin-left: 3.75rem;
     width: 90%;
   }
 }
 @media screen and (min-width: 80rem) {
-  .comments__button-submit__exist-comments-container {
+  .comments__exist-comments-container {
     width: 50%;
     margin: 0 auto;
   }
 }
-.comments__button-submit__list {
+.comments__list {
   width: 100%;
   padding: 1rem 0rem;
   display: flex;
@@ -905,11 +918,11 @@ ul {
   border-bottom: 1px solid #E1E1E1;
 }
 @media screen and (min-width: 80rem) {
-  .comments__button-submit__list {
+  .comments__list {
     padding: 1.5rem 0rem;
   }
 }
-.comments__button-submit__avatar-grey {
+.comments__avatar-grey {
   background-color: #E1E1E1;
   border-radius: 50% 50%;
   width: 2.25rem;
@@ -918,12 +931,12 @@ ul {
   text-align: right;
 }
 @media screen and (min-width: 48rem) {
-  .comments__button-submit__avatar-grey {
+  .comments__avatar-grey {
     width: 3.25rem;
     height: 3.25rem;
   }
 }
-.comments__button-submit__content {
+.comments__content {
   width: 80%;
   font-style: normal;
   font-size: 0.8125rem;
@@ -933,7 +946,7 @@ ul {
   position: relative;
 }
 @media screen and (min-width: 48rem) {
-  .comments__button-submit__content {
+  .comments__content {
     width: 90%;
     font-style: normal;
     font-size: 0.875rem;
@@ -942,7 +955,7 @@ ul {
     color: #323232;
   }
 }
-.comments__button-submit__name-commenter {
+.comments__name-commenter {
   font-style: normal;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -951,7 +964,7 @@ ul {
   margin-bottom: 0.5rem;
 }
 @media screen and (min-width: 48rem) {
-  .comments__button-submit__name-commenter {
+  .comments__name-commenter {
     font-style: normal;
     font-size: 0.875rem;
     font-weight: 600;
@@ -959,13 +972,13 @@ ul {
     color: #323232;
   }
 }
-.comments__button-submit__timestamp {
+.comments__timestamp {
   color: #AFAFAF;
   position: absolute;
   right: 0%;
   top: 0%;
 }
-.comments__button-submit__text {
+.comments__text {
   font-style: normal;
   font-size: 0.8125rem;
   font-weight: 400;
@@ -973,7 +986,7 @@ ul {
   color: #323232;
 }
 @media screen and (min-width: 48rem) {
-  .comments__button-submit__text {
+  .comments__text {
     font-style: normal;
     font-size: 0.875rem;
     font-weight: 400;

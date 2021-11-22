@@ -369,6 +369,12 @@ ul {
   left: auto;
 }
 
+@media screen and (min-width: 80rem) {
+  .header__link-nav--hover:hover {
+    padding-bottom: 42%;
+  }
+}
+
 .hero {
   height: 35vh;
   min-height: 20rem;
@@ -544,6 +550,7 @@ ul {
     flex-direction: row;
     flex-wrap: nowrap;
     width: 62.8%;
+    padding-left: 1.125rem;
   }
 }
 @media screen and (min-width: 48rem) {
@@ -556,7 +563,7 @@ ul {
   }
 }
 .shows__card {
-  padding: 1rem 1rem 1rem;
+  padding: 1rem 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -567,7 +574,7 @@ ul {
 }
 @media screen and (min-width: 48rem) {
   .shows__card {
-    padding: 2.25rem 0 1rem;
+    padding: 1.5rem 1.125rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -575,9 +582,17 @@ ul {
     flex-wrap: nowrap;
   }
 }
+.shows__card:hover {
+  background-color: #FAFAFA;
+}
+@media screen and (min-width: 48rem) {
+  .shows .selected {
+    background-color: #E1E1E1;
+  }
+}
 .shows__date, .shows__venue, .shows__location {
   width: 100%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 48rem) {
   .shows__date, .shows__venue, .shows__location {

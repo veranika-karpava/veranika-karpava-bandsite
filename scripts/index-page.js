@@ -127,10 +127,3 @@ function removeComment() {
         container.removeChild(container.firstElementChild)
     }
 }
-
-
-
-
-
-
-

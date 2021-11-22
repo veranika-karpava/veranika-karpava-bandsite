@@ -18,8 +18,13 @@
         bottom: 0%;
         right: 0%;
         left: auto;
-    }
+    }   
+}
 
+.header__link-nav--hover:hover {
+    @include desktop {
+        padding-bottom: 42%;
+    }
 }
 
 // hero section 
@@ -93,7 +98,7 @@
     @include tablet {
         @include flex(space-between, flex-start, column, nowrap); 
             padding: 3rem 2.25rem 2.25rem;
-    }
+        }
         @include desktop { 
             @include flex(space-between, flex-start, row, nowrap); 
             padding: 3rem 6rem 2.25rem 6rem;
@@ -106,19 +111,20 @@
         @include tablet {
             @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
             padding: 0rem 0rem 2.25rem;
-        }
+            }
         @include desktop {
-        width: 30%;
-        }
+            width: 30%;
+            }
     }
 
     &__cards {
         @include flex(space-between, flex-start, column, nowrap); 
         width: 100%;
+
         @include desktop {
             width: 70%;
             padding-top: 1rem;
-            }
+        }
     }
 
     &__containerTitle {
@@ -126,6 +132,7 @@
         @include tablet {  
             @include flex(space-between,flex-start, row, nowrap); 
             width: 62.8%;
+            padding-left: 1.125rem;
         }
     }
 
@@ -136,13 +143,23 @@
     }
 
     &__card {
-        padding: 1rem 1rem 1rem;
+        padding: 1rem 1rem;
         width: 100%;
         @include flex(space-between, flex-start, column, nowrap); 
         border-bottom: 1px solid $mercury;
         @include tablet {
-            padding: 2.25rem 0 1rem;
+            padding: 1.5rem 1.125rem;
             @include flex(flex-start, center, row, nowrap); 
+        }
+        &:hover {
+            background-color: $alabaster;
+            }
+        
+    }
+
+    .selected {
+        @include tablet { 
+        background-color: $mercury;
         }
     }
 
@@ -150,7 +167,7 @@
     &__venue,
     &__location {
         width: 100%;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
         @include tablet {
             margin-bottom: 0rem; 
         }

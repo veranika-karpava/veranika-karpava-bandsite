@@ -14,9 +14,11 @@
     @include flex(flex-start, center); 
         @include tablet {
             height: 50vh;
+            min-height: 30rem;
         }
          @include desktop {
             height: 60vh;
+            min-height: 35rem;
         }
 
     &__title {
@@ -254,6 +256,7 @@
     }
 
     &__name-form {
+        outline: none;
         height: 2.25rem;
         width:100%;
         margin-bottom: 1rem;
@@ -267,6 +270,9 @@
         &[type = "text"] {
             @include font-placeholder-text;
         }
+        &:focus {
+            border-color: $bandsite-black;
+        }    
 
         @include tablet {
             height: 3rem;
@@ -277,6 +283,7 @@
 
 
         &__comment-box {
+        outline: none;
         height: 6rem;
         width:100%;
         margin-bottom: 0.5rem;
@@ -289,12 +296,19 @@
 
         &[type = "text"] {
             @include font-placeholder-text;
-            }   
+            }  
+        &:focus {
+            border-color: $bandsite-black;
+        }     
 
         @include tablet {
             margin-bottom: 1rem;
             @include styleInputTabletDesktop;
             }   
+    }
+
+    .active {
+        border-color: $bandsite-black;
     }
 
     &__button-submit {
@@ -312,8 +326,8 @@
             background-color: $band-site-darkblack;
             } 
         }
+    }
         
-    
     &__exist-comments-container{
         @include flex(flex-start, flex-start, column, nowrap); 
         @include tablet {
@@ -381,8 +395,8 @@
             @include font-stack (0.875rem, 400, 1.375rem, $bandsite-black);
         }
     }
-    }
 }
+
 
 
 
