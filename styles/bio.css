@@ -856,8 +856,8 @@ ul {
     padding: 1rem;
   }
 }
-.comments .active {
-  border-color: #323232;
+.comments .not-valid {
+  border-color: #D22D2D;
 }
 .comments__button-submit {
   width: 100%;

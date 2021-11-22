@@ -307,8 +307,8 @@
             }   
     }
 
-    .active {
-        border-color: $bandsite-black;
+    .not-valid {
+        border-color: $error;
     }
 
     &__button-submit {

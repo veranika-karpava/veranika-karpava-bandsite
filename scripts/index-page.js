@@ -1,13 +1,3 @@
-// CommentList 
-
-{/* <div class="comments__exist-comments-container">
-<article>
-    <div class="comments__avatar-grey"></div>
-    <div class="comments__content">
-        <h5 class="comments__name-commenter"></h5>
-        <p class="comments__timestamp"></p>
-        <p class="comments__text"></p>
-    </div> */}
 
 let existComments = [
     {
@@ -103,15 +93,42 @@ function handleCommentForm(event) {
         return dateComment;
     };
 
-    event.target.reset();
+    let name = document.querySelector('.comments__name-form');
+    let text = document.querySelector('.comments__comment-box');
 
-    removeComment();
+    if ((nameCommenter === '') && (commentText === '')) {
+        removeClass(name, text)
+        name.classList.add('not-valid');
+        text.classList.add('not-valid');
 
-    addNewComment(nameCommenter, dateStamp, commentText);
+    } else if ((nameCommenter === "") && (commentText !== "")) {
+        removeClass(name, text)
+        name.classList.add('not-valid');
+        text.classList.add('valid');
 
-    displayComment(existComments);
+
+
+    } else if ((nameCommenter !== "") && (commentText === "")) {
+        removeClass(name, text)
+        name.classList.add('valid');
+        text.classList.add('not-valid');
+
+    } else {
+
+        removeClass(name, text)
+
+        event.target.reset();
+
+        removeComment();
+
+        addNewComment(nameCommenter, dateStamp, commentText);
+
+        displayComment(existComments);
+
+    }
 
 }
+
 
 function addNewComment(nameCommenter, dateStamp, commentText) {
     existComments.unshift({
@@ -125,5 +142,14 @@ let container = document.querySelector('.comments__exist-comments-container')
 function removeComment() {
     while (container.firstElementChild) {
         container.removeChild(container.firstElementChild)
+    }
+}
+
+function removeClass(name, text) {
+    if (name.classList.contains('not-valid') || text.classList.contains('not-valid') || name.classList.contains('valid') || text.classList.contains('valid')) {
+        name.classList.remove('not-valid');
+        text.classList.remove('not-valid');
+        name.classList.remove('valid');
+        text.classList.remove('valid');
     }
 }
