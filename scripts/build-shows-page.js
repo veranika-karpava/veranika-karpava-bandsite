@@ -197,11 +197,11 @@ function createButtonElement() {
     return showsButtonBuy;
 }
 
-
 // Click Event
 let articleList = document.querySelectorAll('.shows__card');
 
 articleList.forEach((article) => {
+
     article.addEventListener('click', () => {
 
         if (article.classList.contains('selected')) {

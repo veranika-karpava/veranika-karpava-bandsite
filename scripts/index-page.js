@@ -106,8 +106,6 @@ function handleCommentForm(event) {
         name.classList.add('not-valid');
         text.classList.add('valid');
 
-
-
     } else if ((nameCommenter !== "") && (commentText === "")) {
         removeClass(name, text)
         name.classList.add('valid');
