@@ -205,20 +205,22 @@ function createCommentList(comment) {
 function displayComment(comment) {
     const commentList = createCommentList(comment);
     commentContainer.appendChild(commentList);
-    return commentList;
 }
 
-axios
-    .get(`${projectApiUrl}/comments?api_key=${apiKey}`)
-    .then((response) => {
-        const existCommentList = response.data;
-        existCommentList.sort((a, b) => b.timestamp - a.timestamp)
-        existCommentList.forEach((itemComment) => {
-            displayComment(itemComment);
+const commentElement = () => {
+    axios
+        .get(`${projectApiUrl}/comments?api_key=${apiKey}`)
+        .then((response) => {
+            const existCommentList = response.data;
+            existCommentList.sort((a, b) => b.timestamp - a.timestamp)
+            existCommentList.forEach((itemComment) => {
+                displayComment(itemComment);
+            })
         })
-    })
-    .catch(error => console.log(error))
+        .catch(error => console.log(error))
+}
 
+commentElement();
 
 // for submitting form
 
@@ -230,19 +232,11 @@ form.addEventListener('submit', (event) => {
     const name = document.querySelector('.comments__name-form');
     const text = document.querySelector('.comments__comment-box');
 
-    function removeClass(name, text) {
-        if (name.classList.contains('not-valid') || text.classList.contains('not-valid') || name.classList.contains('valid') || text.classList.contains('valid')) {
-            name.classList.remove('not-valid');
-            text.classList.remove('not-valid');
-            name.classList.remove('valid');
-            text.classList.remove('valid');
-        }
-    }
-
     if ((nameCommenter === "") && (commentText === "")) {
         removeClass(name, text)
         name.classList.add('not-valid');
         text.classList.add('not-valid');
+        console.log("Error 400")
 
     } else if ((nameCommenter === "") && (commentText !== "")) {
         removeClass(name, text)
@@ -262,20 +256,19 @@ form.addEventListener('submit', (event) => {
                 { headers: { 'Content-Type': 'application/json' } })
             .then(postresponse => {
                 commentContainer.innerHTML = "";
-                postresponse;
-                axios
-                    .get(`${projectApiUrl}/comments?api_key=${apiKey}`)
-                    .then(response => {
-                        const existCommentList = response.data;
-                        existCommentList.sort((a, b) => b.timestamp - a.timestamp)
-                        existCommentList.forEach((itemComment) => {
-                            displayComment(itemComment);
-                        })
-                    })
-                    .catch(getError => console.log(getError))
+                commentElement();
             })
             .catch(error => console.log(error))
 
         event.target.reset();
     }
 })
+
+function removeClass(name, text) {
+    if (name.classList.contains('not-valid') || text.classList.contains('not-valid') || name.classList.contains('valid') || text.classList.contains('valid')) {
+        name.classList.remove('not-valid');
+        text.classList.remove('not-valid');
+        name.classList.remove('valid');
+        text.classList.remove('valid');
+    }
+}

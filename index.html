@@ -87,11 +87,11 @@
                     <img src="./assets/images/Mohan-muruge.jpg" alt="Mohan-muruge Avatar" class="comments__image">
                 </div>
                 <form class="comments__form">
-                    <h4 class="comments__title-input">NAME</h4>
-                    <input class="comments__name-form" type="text" name="name-commenter" placeholder="Enter your name"
-                        min=1>
-                    <h4 class="comments__title-input">COMMENT</h4>
-                    <textarea class="comments__comment-box" type="text" name="comment"
+                    <label for="namecommenter" class="comments__title-input">NAME</label>
+                    <input class="comments__name-form" type="text" id="namecommenter" name="name-commenter"
+                        placeholder="Enter your name" min=1>
+                    <label for="commentbox" class="comments__title-input">COMMENT</label>
+                    <textarea class="comments__comment-box" type="text" id="commentbox" name="comment"
                         placeholder="Add a new comment"></textarea>
                     <button class="comments__button-submit" type="submit">COMMENT</button>
                 </form>

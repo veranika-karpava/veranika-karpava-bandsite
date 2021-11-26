@@ -156,6 +156,3 @@ mainSection.appendChild(showsSection);
 
 
 
-
-
-
