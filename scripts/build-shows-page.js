@@ -121,10 +121,6 @@ const showsElement = () => {
             showsSchedule.forEach((showItem) => {
                 const cardElement = createCardElement(showItem);
                 showsContainerCards.append(cardElement);
-                cardElement.addEventListener('click', (e) => {
-                    cardElement.classList.toggle('selected');
-                    console.log(e.target);
-                })
             });
         })
         .catch((error) => console.log(error));
@@ -148,6 +144,20 @@ function createSectionElement() {
 
 const showsSection = createSectionElement();
 mainSection.appendChild(showsSection);
+
+const showsCardsContainer = document.querySelector('.shows__cards');
+const concertCard = showsCardsContainer.childNodes;
+
+console.log(concertCard)
+
+showsCardsContainer.addEventListener('click', (e) => {
+    if (e.target && e.target.className === 'shows__card') {
+        concertCard.forEach(concert => {
+            concert.classList.remove('selected');
+        })
+        e.target.classList.toggle('selected');
+    }
+})
 
 
 
