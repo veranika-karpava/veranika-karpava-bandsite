@@ -22,10 +22,10 @@
         }
 
     &__title {
-        @include font-stack(1.5rem, 600, 2rem, $white);
+        @include heroTitleMobile;
         margin-left:1rem;
         @include tablet {
-            @include font-stack (3.75rem, 600, 4.25rem, $white);
+            @include heroTitleTabletDesktop;
             margin-left:1.25rem;
             }
         @include desktop {
@@ -47,9 +47,9 @@
         }
 
     &__title {
-        @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
+        @include fontStackTitleMobile;
         @include tablet {
-            @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
+            @include fontStackTitleTabletDesktop;
     }
     }
 
@@ -113,10 +113,10 @@
 
     }
     &__container-detail {
-        @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
+        @include fontStackBodyMobile;
         @include flex(space-between, flex-start, column, nowrap); 
         @include tablet {
-            @include font-stack (0.875rem, 400, 1.375rem, $bandsite-black);
+            @include fontStackBodyTabletDesktop;
             @include flex(space-between, flex-start, row, nowrap); 
         }
 
@@ -149,9 +149,9 @@
     }
 
     &__title {
-        @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
+        @include fontStackTitleMobile;
         @include tablet {
-            @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
+            @include fontStackTitleTabletDesktop;
             padding-bottom: 2.25rem;
         }
     }
@@ -195,10 +195,10 @@
     }
 
     &__title {
-        @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
+        @include fontStackTitleMobile;
         padding-bottom: 1rem;
         @include tablet {
-            @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
+            @include fontStackTitleTabletDesktop;
             padding-bottom: 2.25rem;
         }
     }
@@ -366,11 +366,11 @@
 
     &__content {
         width: 80%;
-        @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
+        @include fontStackBodyMobile;
         position: relative;
         @include tablet {
             width: 90%;  
-            @include font-stack (0.875rem, 400, 1.375rem, $bandsite-black);
+            @include fontStackBodyTabletDesktop;
         }
     }
 
@@ -390,9 +390,9 @@
     }
 
     &__text {
-        @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
+        @include fontStackBodyMobile;
         @include tablet {
-            @include font-stack (0.875rem, 400, 1.375rem, $bandsite-black);
+            @include fontStackBodyTabletDesktop;
         }
     }
 }

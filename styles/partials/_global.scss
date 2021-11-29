@@ -122,7 +122,7 @@ ul {
         }
 
     &__title{
-        @include font-stack (1.5rem, 600, 2rem, $white);
+        @include heroTitleMobile;
         margin-bottom: 1rem;
         @include tablet {
             @include font-stack (2.25rem, 600, 2.75rem, $white);

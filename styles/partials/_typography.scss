@@ -43,6 +43,30 @@
             font-family: 'AvenirNextLTPro', 'Calibri', sans-serif; 
 }
 
+@mixin fontStackTitleMobile {
+    @include font-stack (1.5rem, 600, 2rem, $bandsite-black);
+}
+
+@mixin fontStackTitleTabletDesktop {
+    @include font-stack (2.25rem, 600, 2.75rem, $bandsite-black);
+}
+
+@mixin fontStackBodyMobile {
+    @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
+}
+
+@mixin fontStackBodyTabletDesktop {
+    @include font-stack (0.875rem, 400, 1.375rem, $bandsite-black);
+}
+
+@mixin heroTitleMobile {
+    @include font-stack(1.5rem, 600, 2rem, $white);
+}
+
+@mixin heroTitleTabletDesktop {
+    @include font-stack (3.75rem, 600, 4.25rem, $white);
+}
+
 
 
 

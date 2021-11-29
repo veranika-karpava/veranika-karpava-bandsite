@@ -488,7 +488,7 @@ ul {
     align-items: flex-start;
     flex-direction: column;
     flex-wrap: nowrap;
-    padding: 3rem 2.25rem 2.25rem;
+    padding: 3rem 1.25rem 2.25rem;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -517,7 +517,7 @@ ul {
     font-weight: 600;
     line-height: 2.75rem;
     color: #323232;
-    padding: 0rem 0rem 2.25rem;
+    padding: 0rem 1.125rem 0.75rem;
   }
 }
 @media screen and (min-width: 80rem) {

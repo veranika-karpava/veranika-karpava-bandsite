@@ -145,10 +145,10 @@ function createSectionElement() {
 const showsSection = createSectionElement();
 mainSection.appendChild(showsSection);
 
+// For selection shows
+
 const showsCardsContainer = document.querySelector('.shows__cards');
 const concertCard = showsCardsContainer.childNodes;
-
-console.log(concertCard)
 
 showsCardsContainer.addEventListener('click', (e) => {
     if (e.target && e.target.className === 'shows__card') {
