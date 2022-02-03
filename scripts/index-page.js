@@ -3,7 +3,7 @@ const commentContainer = document.querySelector('.comments__exist-comments-conta
 const form = document.querySelector('.comments__form');
 
 const projectApiUrl = "https://project-1-api.herokuapp.com";
-const apiKey = "7914ca5-c702-45f8-a052-61c3857a4dde";
+const apiKey = "cf2b4dc8-984d-4e38-bda8-484b2896fab5";
 
 
 function createCommentContent(comment) {
@@ -28,9 +28,52 @@ function createCommentContent(comment) {
     textComment.classList.add('comments__text');
     textComment.innerText = comment.comment;
 
-    commentContent.append(nameCommenter, textComment, timestampComment);
+    const blockActionComment = document.createElement('div');
+    blockActionComment.classList.add('comments__block');
+
+    const deleteComment = document.createElement('img');
+    deleteComment.classList.add('comments__delete-button');
+    deleteComment.setAttribute('src', '../assets/icons/icon-delete.svg');
+    deleteComment.id = comment.id;
+
+    deleteComment.addEventListener('click', (e) => {
+        let commentId = e.target.id;
+        axios
+            .delete(`${projectApiUrl}/comments/${commentId}?api_key=${apiKey}`)
+            .then((res) => {
+                commentElement();
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    })
+
+    const likeComment = document.createElement('img');
+    likeComment.classList.add('comments__like-button');
+    likeComment.setAttribute('src', '../assets/icons/icon-like.svg');
+    likeComment.id = comment.id;
+
+    const likeCounterComment = document.createElement('p');
+    likeCounterComment.classList.add('comments__like-counter');
+    likeCounterComment.innerText = comment.likes;
+
+    likeComment.addEventListener('click', (e) => {
+        let likeId = e.target.id;
+        axios
+            .put(`${projectApiUrl}/comments/${likeId}/like?api_key=${apiKey}`)
+            .then((res) => {
+                likeCounterComment.innerText = res.data.likes;
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    })
+
+    blockActionComment.append(deleteComment, likeComment, likeCounterComment)
+    commentContent.append(nameCommenter, textComment, timestampComment, blockActionComment);
 
     return commentContent;
+
 }
 
 function createCommentList(comment) {
@@ -57,6 +100,7 @@ const commentElement = () => {
     axios
         .get(`${projectApiUrl}/comments?api_key=${apiKey}`)
         .then((response) => {
+            commentContainer.innerText = '';
             const existCommentList = response.data;
             existCommentList.sort((a, b) => b.timestamp - a.timestamp)
             existCommentList.forEach((itemComment) => {
@@ -65,11 +109,11 @@ const commentElement = () => {
         })
         .catch(error => console.log(error))
 }
-
 commentElement();
 
-// for submitting form
 
+
+// for submitting form
 form.addEventListener('submit', (event) => {
 
     event.preventDefault();
