@@ -6,6 +6,7 @@ BandSite is a react web application for musical band.  It was built during the B
 Check `.env.sample` to set up enviroment variables file (.env)
 
 # Project Tech Stack
+* HTML
 * Sass
 * ReactJS
 
