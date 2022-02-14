@@ -1,11 +1,12 @@
 
 # BandSite
-BandSite is a react web application for musical band.  It was built during the BrainStation Web Development program.
+BandSite is a JS web application for musical band.  It was built during the BrainStation Web Development program.
 
 # Project Tech Stack
 * HTML
 * Sass
-* ReactJS
+* JavaScript
+* Axios
 
 # Running the Project
 1. Clone or download this repository
