@@ -4,6 +4,7 @@ BandSite is a JS web application for musical band.  It was built during the Brai
 
 # Project Tech Stack
 * HTML
+* DOM
 * Sass
 * JavaScript
 * Axios
