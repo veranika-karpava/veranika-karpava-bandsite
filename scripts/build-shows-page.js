@@ -1,5 +1,5 @@
 const projectApiUrl = "https://project-1-api.herokuapp.com";
-
+import { apiKey } from "./config.js"
 
 const mainSection = document.querySelector('.main');
 

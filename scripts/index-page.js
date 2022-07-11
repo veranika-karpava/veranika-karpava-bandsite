@@ -1,3 +1,5 @@
+import { apiKey } from "./config.js"
+
 const commentContainer = document.querySelector('.comments__exist-comments-container');
 
 const form = document.querySelector('.comments__form');
@@ -7,6 +9,7 @@ const projectApiUrl = "https://project-1-api.herokuapp.com";
 
 
 function createCommentContent(comment) {
+
 
     const commentContent = document.createElement('div');
     commentContent.classList.add('comments__content');
