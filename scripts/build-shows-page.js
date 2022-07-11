@@ -1,5 +1,5 @@
 const projectApiUrl = "https://project-1-api.herokuapp.com";
-const apiKey = "7914ca5-c702-45f8-a052-61c3857a4dde";
+
 
 const mainSection = document.querySelector('.main');
 
