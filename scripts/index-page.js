@@ -1,5 +1,7 @@
 import { apiKey } from "./config.js"
 
+console.log(apiKey)
+
 const commentContainer = document.querySelector('.comments__exist-comments-container');
 
 const form = document.querySelector('.comments__form');
