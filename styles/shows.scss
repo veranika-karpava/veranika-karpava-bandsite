@@ -5,25 +5,97 @@
 
 // header section
 
-
 .header__link-nav--active {
     @include tablet {
         padding-bottom: 53%;
     }
+
     @include desktop {
         padding-bottom: 63%;
     }
 
-    &:after{
+    &:after {
         bottom: 0%;
         right: 0%;
         left: auto;
-    }   
+    }
 }
 
 .header__link-nav--hover:hover {
     @include desktop {
         padding-bottom: 42%;
+    }
+}
+
+// modal
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &__content-box {
+        @include flex(center, center, column, nowrap);
+        text-align: center;
+        background-color: $white;
+        margin: auto;
+        padding: 2rem;
+        width: 50%;
+        max-width: 450px;
+        height: 30%;
+        max-height: 300px;
+        top: 30%;
+        position: relative;
+    }
+
+    &__content {
+        max-width: 350px;
+        max-height: 300px;
+    }
+
+    &__text {
+        @include fontStackModal;
+    }
+
+    &__close {
+        color: $silver;
+        position: absolute;
+        top: 1vh;
+        right: 1.5rem;
+        font-size: 28px;
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+            color: #000;
+            cursor: pointer;
+        }
+    }
+
+    &__button-close {
+        cursor: pointer;
+        margin-top: 1rem;
+        width: 100%;
+        height: 2.5rem;
+        @include buttonStyle;
+        @include font-stack(0.625rem, 400, 1.25rem, $white);
+
+        @include tablet {
+            @include font-stack(0.75rem, 400, 1.25rem, $white);
+            max-width: 9.375rem;
+            padding: 0 2rem;
+        }
+
+        @include desktop {
+            &:hover {
+                background-color: $band-site-darkblack;
+            }
+        }
     }
 }
 
@@ -35,27 +107,31 @@
     background-size: cover;
     background-blend-mode: darken;
     background-color: rgba(50, 50, 50, 0.5);
-    @include flex(space-between, flex-start, column, nowrap); 
-        @include tablet {
-            height: 50vh;
-            min-height: 30rem;
-        }
-         @include desktop {
-            height: 60vh;
-            min-height: 35rem;
-            @include flex(space-between, flex-start, row, nowrap); 
-        }
+    @include flex(space-between, flex-start, column, nowrap);
+
+    @include tablet {
+        height: 50vh;
+        min-height: 30rem;
+    }
+
+    @include desktop {
+        height: 60vh;
+        min-height: 35rem;
+        @include flex(space-between, flex-start, row, nowrap);
+    }
 
     &__content {
-        margin:2.25rem 1rem 0rem;
-        width:70%;
+        margin: 2.25rem 1rem 0rem;
+        width: 70%;
+
         @include tablet {
-            margin:3rem 2.25rem 0rem;
-            width:70%;
+            margin: 3rem 2.25rem 0rem;
+            width: 70%;
         }
+
         @include desktop {
             margin: 10rem 0rem 0 6rem;
-            width:100%;
+            width: 100%;
         }
 
     }
@@ -63,30 +139,34 @@
     &__tagline {
         @include font-stack (0.8125rem, 400, 1.125rem, $mercury);
         margin-bottom: 1rem;
+
         @include tablet {
             @include font-stack (1.5rem, 600, 2rem, $mercury);
-            }
+        }
     }
 
     &__title {
         @include heroTitleMobile;
+
         @include tablet {
             @include heroTitleTabletDesktop;
-            }
+        }
     }
 
     &__track {
         width: 100%;
         height: 9rem;
-        padding:0 1rem 1.5rem;
+        padding: 0 1rem 1.5rem;
         margin-bottom: 0.75rem;
+
         @include tablet {
-            margin:0rem 2.25rem 1.5rem 1.25rem;
-            width:60%;
-            }
-            @include desktop {
-                margin:13.5rem 5rem 0 0;
-            }
+            margin: 0rem 2.25rem 1.5rem 1.25rem;
+            width: 60%;
+        }
+
+        @include desktop {
+            margin: 13.5rem 5rem 0 0;
+        }
     }
 }
 
@@ -94,32 +174,38 @@
 .shows {
     padding: 1.5rem 0 1rem;
     background-color: $white;
-    @include flex(space-between, flex-start, column, nowrap); 
+    @include flex(space-between, flex-start, column, nowrap);
+
     @include tablet {
-        @include flex(space-between, flex-start, column, nowrap); 
-            padding: 3rem 1.25rem 2.25rem;
-        }
-        @include desktop { 
-            @include flex(space-between, flex-start, row, nowrap); 
-            padding: 3rem 6rem 2.25rem 6rem;
-        } 
+        @include flex(space-between, flex-start, column, nowrap);
+        padding: 3rem 1.25rem 2.25rem;
+    }
+
+    @include desktop {
+        @include flex(space-between, flex-start, row, nowrap);
+        padding: 3rem 6rem 2.25rem 6rem;
+    }
 
     &__title {
         @include fontStackTitleMobile;
         padding: 0rem 1rem 0rem;
         width: 100%;
+
         @include tablet {
             @include fontStackTitleTabletDesktop;
             padding: 0rem 1.125rem 0.75rem;
-            }
+        }
+
         @include desktop {
             width: 30%;
-            }
+        }
     }
 
     &__cards {
-        @include flex(space-between, flex-start, column, nowrap); 
+        cursor: pointer;
+        @include flex(space-between, flex-start, column, nowrap);
         width: 100%;
+
         @include desktop {
             width: 70%;
             padding-top: 1rem;
@@ -128,19 +214,21 @@
 
     &__containerTitle {
         display: none;
-        @include tablet {  
+
+        @include tablet {
             @include flex(space-between, center, row, nowrap);
             width: calc(100% - 9.375rem);
             padding: 1.5rem 1.125rem 0rem;
+
             @include desktop {
                 padding: 0.4rem 1.125rem 0rem;
             }
+        }
     }
-}
 
     &__title-card-container {
         @include tablet {
-            width:33.33%;
+            width: 33.33%;
             @include font-stack (0.75rem, 600, 1.25rem, $silver);
         }
     }
@@ -148,20 +236,22 @@
     &__card {
         padding: 1rem 1rem;
         width: 100%;
-        @include flex(space-between, flex-start, column, nowrap); 
+        @include flex(space-between, flex-start, column, nowrap);
         border-bottom: 1px solid $mercury;
+
         @include tablet {
             padding: 1.5rem 1.125rem;
-            @include flex(flex-start, center, row, nowrap); 
+            @include flex(flex-start, center, row, nowrap);
         }
+
         &:hover {
             background-color: $alabaster;
-            } 
+        }
     }
 
     .selected {
-        @include tablet { 
-        background-color: $mercury;
+        @include tablet {
+            background-color: $mercury;
         }
     }
 
@@ -170,14 +260,16 @@
     &__location {
         width: 100%;
         margin-bottom: 1rem;
+
         @include tablet {
-            margin-bottom: 0rem; 
+            margin-bottom: 0rem;
         }
     }
 
     &__title-card {
         @include font-stack (0.625rem, 600, 1.125rem, $silver);
         margin-bottom: 0.3rem;
+
         @include tablet {
             display: none;
         }
@@ -185,6 +277,7 @@
 
     &__detail-date {
         @include font-stack (0.8125rem, 600, 1.125rem, $bandsite-black);
+
         @include tablet {
             @include font-stack (0.875rem, 600, 1.375rem, $bandsite-black)
         }
@@ -192,25 +285,29 @@
 
     &__detail {
         @include fontStackBodyMobile;
+
         @include tablet {
             @include fontStackBodyTabletDesktop;
         }
     }
 
     &__button-buy {
+        cursor: pointer;
         width: 100%;
         height: 2.5rem;
         @include buttonStyle;
         @include font-stack(0.625rem, 400, 1.25rem, $white);
+
         @include tablet {
             @include font-stack(0.75rem, 400, 1.25rem, $white);
             max-width: 9.375rem;
             padding: 0 2rem;
-            }
-            @include desktop{
-                &:hover {
+        }
+
+        @include desktop {
+            &:hover {
                 background-color: $band-site-darkblack;
-                }
             }
+        }
     }
 }

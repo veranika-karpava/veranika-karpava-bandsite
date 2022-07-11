@@ -3,11 +3,13 @@ const apiKey = "7914ca5-c702-45f8-a052-61c3857a4dde";
 
 const mainSection = document.querySelector('.main');
 
-
 function createButtonElement() {
     const showsButtonBuy = document.createElement('button');
     showsButtonBuy.classList.add('shows__button-buy');
     showsButtonBuy.innerText = 'BUY TICKETS';
+    showsButtonBuy.onclick = () => {
+        modal.style.display = 'block';
+    }
 
     return showsButtonBuy;
 }
@@ -158,6 +160,22 @@ showsCardsContainer.addEventListener('click', (e) => {
         e.target.classList.toggle('selected');
     }
 })
+
+// Modal pop-up on button click
+const modal = document.querySelector(".modal");
+let modalCloseX = document.getElementsByClassName("modal__close")[0];
+let modalCloseBtn = document.getElementsByClassName("modal__button-close")[0];
+modalCloseX.onclick = () => {
+    modal.style.display = "none";
+}
+modalCloseBtn.onclick = () => {
+    modal.style.display = "none";
+}
+window.onclick = (e) => {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 
 

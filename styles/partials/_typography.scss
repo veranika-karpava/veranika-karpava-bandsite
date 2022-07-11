@@ -1,46 +1,47 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 @font-face {
-    font-family:'AvenirNextLTPro';
-    src:  url('../assets/fonts/AvenirNextLTPro-Regular.woff2') format("woff2"),
-    url('../assets/fonts/AvenirNextLTPro-Regular.woff') format("woff"),
-    url('../assets/fonts/AvenirNextLTPro-Regular.otf') format("opentype"),
-    url('../assets/fonts/AvenirNextLTPro.ttf') format("truetype");
+    font-family: 'AvenirNextLTPro';
+    src: url('../assets/fonts/AvenirNextLTPro-Regular.woff2') format("woff2"),
+        url('../assets/fonts/AvenirNextLTPro-Regular.woff') format("woff"),
+        url('../assets/fonts/AvenirNextLTPro-Regular.otf') format("opentype"),
+        url('../assets/fonts/AvenirNextLTPro.ttf') format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family:'AvenirNextLTPro';
+    font-family: 'AvenirNextLTPro';
     src: url('../assets/fonts/AvenirNextLTPro-Demi.woff2') format("woff2"),
-    url('../assets/fonts/AvenirNextLTPro-Demi.woff') format("woff"),
-    url('../assets/fonts/AvenirNextLTPro-Demi.otf') format("opentype"),
-    url('../assets/fonts/AvenirNextLTProDemi.ttf') format("truetype");
+        url('../assets/fonts/AvenirNextLTPro-Demi.woff') format("woff"),
+        url('../assets/fonts/AvenirNextLTPro-Demi.otf') format("opentype"),
+        url('../assets/fonts/AvenirNextLTProDemi.ttf') format("truetype");
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family:'AvenirNextLTPro';
+    font-family: 'AvenirNextLTPro';
     src: url('../assets/fonts/AvenirNextLTPro-Bold.woff2') format("woff2"),
-    url('../assets/fonts/AvenirNextLTPro-Bold.woff') format("woff"),
-    url('../assets/fonts/AvenirNextLTPro-Bold.otf') format("opentype"),
-    url('../assets/fonts/AvenirNextLTProBold.ttf') format("truetype");
+        url('../assets/fonts/AvenirNextLTPro-Bold.woff') format("woff"),
+        url('../assets/fonts/AvenirNextLTPro-Bold.otf') format("opentype"),
+        url('../assets/fonts/AvenirNextLTProBold.ttf') format("truetype");
     font-weight: 700;
     font-style: normal;
 }
 
-@mixin font-stack ($font-size, $font-weight, $line-height, $color){
+@mixin font-stack ($font-size, $font-weight, $line-height, $color) {
     font-style: normal;
     font-size: $font-size;
     font-weight: $font-weight;
-    line-height:$line-height;
+    line-height: $line-height;
     color: $color;
 }
 
 @mixin font-placeholder-text {
     @include font-stack (0.8125rem, 400, 1.125rem, $bandsite-black);
-            font-family: 'AvenirNextLTPro', 'Calibri', sans-serif; 
+    font-family: 'AvenirNextLTPro', 'Calibri', sans-serif;
 }
 
 @mixin fontStackTitleMobile {
@@ -67,6 +68,10 @@
     @include font-stack (3.75rem, 600, 4.25rem, $white);
 }
 
+@mixin fontStackModal {
+    @include font-stack (1rem, 400, 1.5rem, $bandsite-black);
 
-
-
+    @include tablet {
+        @include font-stack (2rem, 400, 2.5rem, $bandsite-black);
+    }
+}
