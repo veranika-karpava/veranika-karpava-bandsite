@@ -1,12 +1,9 @@
-import { apiKey } from "./config.js"
-
-console.log(apiKey)
-
 const commentContainer = document.querySelector('.comments__exist-comments-container');
 
 const form = document.querySelector('.comments__form');
 
 const projectApiUrl = "https://project-1-api.herokuapp.com";
+const apiKey = "cf2b4dc8-984d-4e38-bda8-484b2896fab5"
 
 
 
