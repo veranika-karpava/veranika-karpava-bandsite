@@ -6,9 +6,7 @@ const projectApiUrl = "https://project-1-api.herokuapp.com";
 const apiKey = "cf2b4dc8-984d-4e38-bda8-484b2896fab5"
 
 
-
 function createCommentContent(comment) {
-
 
     const commentContent = document.createElement('div');
     commentContent.classList.add('comments__content');
@@ -113,8 +111,6 @@ const commentElement = () => {
 }
 commentElement();
 
-
-
 // for submitting form
 form.addEventListener('submit', (event) => {
 
@@ -128,7 +124,6 @@ form.addEventListener('submit', (event) => {
         removeClass(name, text)
         name.classList.add('not-valid');
         text.classList.add('not-valid');
-        console.log("Error 400")
 
     } else if ((nameCommenter === "") && (commentText !== "")) {
         removeClass(name, text)
@@ -146,7 +141,7 @@ form.addEventListener('submit', (event) => {
             .post(`${projectApiUrl}/comments?api_key=${apiKey}`,
                 { name: nameCommenter, comment: commentText },
                 { headers: { 'Content-Type': 'application/json' } })
-            .then(postresponse => {
+            .then(response => {
                 commentContainer.innerHTML = "";
                 commentElement();
             })

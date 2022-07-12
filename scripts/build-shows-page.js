@@ -12,10 +12,6 @@ function createButtonElement() {
         modal.style.display = 'block';
     })
 
-    // showsButtonBuy.onclick = () => {
-    //     modal.style.display = 'block';
-    // }
-
     return showsButtonBuy;
 }
 
@@ -172,17 +168,19 @@ showsCardsContainer.addEventListener('click', (e) => {
 const modal = document.querySelector(".modal");
 let modalCloseX = document.getElementsByClassName("modal__close")[0];
 let modalCloseBtn = document.getElementsByClassName("modal__button-close")[0];
-modalCloseX.onclick = () => {
+modalCloseX.addEventListener('click', (e) => {
     modal.style.display = "none";
-}
-modalCloseBtn.onclick = () => {
+})
+modalCloseBtn.addEventListener('click', (e) => {
     modal.style.display = "none";
-}
-window.onclick = (e) => {
+})
+
+window.addEventListener('click', (e) => {
     if (e.target == modal) {
         modal.style.display = "none";
     }
-}
+})
+
 
 
 
