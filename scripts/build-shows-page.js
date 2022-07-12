@@ -8,9 +8,13 @@ function createButtonElement() {
     const showsButtonBuy = document.createElement('button');
     showsButtonBuy.classList.add('shows__button-buy');
     showsButtonBuy.innerText = 'BUY TICKETS';
-    showsButtonBuy.onclick = () => {
+    showsButtonBuy.addEventListener('click', (e) => {
         modal.style.display = 'block';
-    }
+    })
+
+    // showsButtonBuy.onclick = () => {
+    //     modal.style.display = 'block';
+    // }
 
     return showsButtonBuy;
 }
@@ -161,6 +165,8 @@ showsCardsContainer.addEventListener('click', (e) => {
         e.target.classList.toggle('selected');
     }
 })
+
+
 
 // Modal pop-up on button click
 const modal = document.querySelector(".modal");
